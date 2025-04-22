@@ -9,6 +9,8 @@ pipeline {
 		stage('code-build') {
 			steps {
 				sh '''
+					docker build . -t archsarangx/project-frontend:latest
+					docker push archsarangx/project-frontend:latest
 					npm install
 					ng build
 				'''
